@@ -1,0 +1,48 @@
+// @use 从其他Sass样式表加载mixin，function和变量，并将来自多个样式表的CSS组合在一起
+// @include 指令可以将混入（mixin）引入到文档中。
+
+@use './button-config.scss';
+@import './button-base.scss';
+
+.v-btn {
+  // 导入button基础样式
+  @include button-base;
+
+  // 导入type相关的样式
+  @include button-variant(button-config.$type);
+
+  // 导入hover等伪类样式
+  @include button-variant(button-config.$pseudo, true);
+
+  // 导入size相关样式
+  @include button-variant(button-config.$size);
+
+  // 导入plain相关样式
+  @include button-variant(button-config.$plain, false);
+}
+
+.v-icon-left {
+  margin-right: 5px;
+}
+
+.v-icon-right {
+  margin-left: 5px;
+}
+
+// loading 动画
+.v-icon-loading {
+  animation: rotating 2s linear infinite;
+}
+
+@keyframes rotating {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+.v-btn-group {
+  display: flex;
+}

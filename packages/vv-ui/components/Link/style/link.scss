@@ -1,0 +1,91 @@
+@import '../../../style/variable.scss';
+@import './link-base.scss';
+
+$type: (
+  primary: (
+    color: $v-color-primary
+  ),
+  success: (
+    color: $v-color-success
+  ),
+  info: (
+    color: $v-color-info
+  ),
+  warning: (
+    color: $v-color-warning
+  ),
+  danger: (
+    color: $v-color-danger
+  ),
+  default: (
+    color: $v-text
+  )
+);
+$pseudo: (
+  primary: (
+    color: $v-color-primary,
+    hover: (
+      color: $v-color-primary-hover
+    )
+  ),
+  success: (
+    color: $v-color-success,
+    hover: (
+      color: $v-color-success-hover
+    )
+  ),
+  info: (
+    color: $v-color-info,
+    hover: (
+      color: $v-color-info-hover
+    )
+  ),
+  warning: (
+    color: $v-color-warning,
+    hover: (
+      color: $v-color-warning-hover
+    )
+  ),
+  danger: (
+    color: $v-color-danger,
+    hover: (
+      color: $v-color-danger-hover
+    )
+  ),
+  default: (
+    color: $v-text,
+    hover: (
+      color: $v-text
+    )
+  )
+);
+
+.v-link {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  position: relative;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0;
+  font-size: 15px;
+  @include link-variant($type, false);
+  @include link-variant($pseudo, true);
+}
+.v-link--underline {
+  &:hover:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 0;
+    bottom: 0;
+    border-bottom: 1px solid;
+  }
+}
+.v-link--disabled {
+  cursor: not-allowed;
+}

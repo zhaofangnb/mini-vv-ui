@@ -1,0 +1,34 @@
+.v-space {
+  display: inline-flex;
+  &-vertical {
+    flex-direction: column;
+  }
+
+  &-horizontal {
+    flex-direction: row;
+  }
+
+  &-align-baseline {
+    align-items: baseline;
+  }
+
+  &-align-start {
+    align-items: flex-start;
+  }
+
+  &-align-end {
+    align-items: flex-end;
+  }
+
+  &-align-center {
+    align-items: center;
+  }
+
+  &-wrap {
+    flex-wrap: wrap;
+  }
+
+  &-fill {
+    display: flex;
+  }
+}

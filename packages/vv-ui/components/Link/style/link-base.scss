@@ -1,0 +1,22 @@
+@mixin link-variant($variant, $pseudo: false) {
+  // 第一层是多态的类型
+  @each $key, $value in $variant {
+    &.v-link__#{$key} {
+      // 第二层是多态类型下的样式
+      @each $item-key, $item-value in $value {
+        // 如果是伪类就继续第三层
+        @if $pseudo {
+          &:#{$item-key} {
+            // 第三层是伪类的样式
+            @each $sub-item-key, $sub-item-value in $item-value {
+              #{$sub-item-key}: $sub-item-value;
+            }
+          }
+        } @else {
+          // 不是伪类直接设置样式
+          #{$item-key}: $item-value;
+        }
+      }
+    }
+  }
+}

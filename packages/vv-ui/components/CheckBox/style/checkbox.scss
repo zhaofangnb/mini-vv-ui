@@ -1,0 +1,281 @@
+@import '../../../style/variable.scss';
+
+$font-size-map: (
+  small: $v-font-size-sm,
+  medium: $v-font-size-md,
+  large: $v-font-size-lg
+);
+$checkbox-width-map: (
+  small: 14px,
+  medium: 16px,
+  large: 18px
+);
+$checkbox-label-height-map: (
+  small: $v-size-sm,
+  medium: $v-size-md,
+  large: $v-size-lg
+);
+
+.v-checkbox {
+  position: relative;
+  display: flex;
+  display: -ms-flexbox;
+  align-items: center;
+  -ms-flex-align: center;
+  height: 100%;
+  margin: 0;
+
+  .v-checkbox__tick {
+    fill: $v-light-text;
+    stroke-dashoffset: 50;
+    opacity: 0;
+    transform: scale(0);
+    transform-origin: 50% 50%;
+    transition: stroke-dashoffset 0.2s ease-in-out, opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+  }
+
+  &.active:not(.half-checked) .v-checkbox__tick {
+    opacity: 1;
+    stroke-dashoffset: 0;
+    transform: scale(1);
+    transition: stroke-dashoffset 0.3s cubic-bezier(0.755, 0.05, 0.855, 0.06),
+      opacity 0.2s cubic-bezier(0.755, 0.05, 0.855, 0.06);
+  }
+
+  &.active,
+  &.half-checked {
+    &:not(.disabled) .v-checkbox__material:not(.custom-color) {
+      border-color: $v-brand-active;
+    }
+    .v-checkbox--bordered {
+      border-color: $v-brand-active;
+    }
+  }
+
+  &.active:not(.disabled) {
+    .v-checkbox__material {
+      background-size: 100% 100%;
+      transition: background-size 0.2s ease-in-out, border-color 0.2s ease-in-out;
+    }
+  }
+
+  &.unchecked:not(.disabled) {
+    .v-checkbox__material:not(.custom-color) {
+      background-size: 0% 0%;
+      transition: background-size 0.2s ease-in-out, border-color 0.2s ease-in-out;
+
+      &:hover {
+        border-color: $v-brand-active;
+      }
+    }
+  }
+
+  &.unchecked:not(.disabled) {
+    .v-checkbox__material.custom-color {
+      background-size: 0% 0%;
+      transition: background-size 0.2s ease-in-out, border-color 0.2s ease-in-out;
+    }
+  }
+
+  &.half-checked {
+    .v-checkbox__material:not(.custom-color) {
+      background-color: $v-brand-active;
+
+      & > .v-checkbox__halfchecked-bg {
+        opacity: 1;
+        transform: scale(0.4288);
+        transition: transform 0.2s cubic-bezier(0.755, 0.05, 0.855, 0.06);
+        background-color: $v-light-text;
+      }
+    }
+  }
+
+  &.half-checked {
+    .v-checkbox__material.custom-color {
+      & > .v-checkbox__halfchecked-bg {
+        opacity: 1;
+        transform: scale(0.4288);
+        transition: transform 0.2s cubic-bezier(0.755, 0.05, 0.855, 0.06);
+        background-color: $v-light-text;
+      }
+    }
+  }
+
+  .v-checkbox__material {
+    text-align: initial;
+    height: 14px;
+    width: 14px;
+    position: relative;
+    user-select: none;
+    border: 1px solid $v-devide-line;
+    border-radius: $v-border-radius;
+    background: linear-gradient($v-brand-active, $v-brand-active) no-repeat 50%/0;
+    margin-right: 8px;
+    vertical-align: text-bottom;
+
+    &.v-checkbox__default-background {
+      background-color: $v-bg-block;
+    }
+
+    &.v-checkbox--no-label {
+      margin-right: 0;
+    }
+
+    & > .v-checkbox__halfchecked-bg {
+      display: inline-block;
+      position: absolute;
+      content: '';
+      background-color: $v-light-text;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      transform: scale(1);
+      opacity: 0;
+    }
+
+    & > svg {
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  &:not(.disabled).half-checked {
+    .v-checkbox__material:not(.custom-color) {
+      &:focus,
+      &:active,
+      &:hover {
+        background-color: $v-brand-active;
+      }
+
+      // 激活状态深色
+      &:active,
+      &:focus,
+      &:hover:active,
+      &:hover:focus {
+        background-color: $v-brand-active-focus;
+      }
+    }
+  }
+
+  &__input {
+    opacity: 0;
+    position: absolute;
+    margin: 0;
+    z-index: -1;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    left: 0;
+    pointer-events: none;
+  }
+
+  & label {
+    position: relative;
+    font-weight: 400;
+    height: 16px;
+    line-height: 16px;
+    cursor: pointer;
+    color: $v-text;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    @each $size in ('small', 'medium', 'large') {
+      &.v-checkbox--#{$size} {
+        display: flex;
+        align-items: center;
+        font-size: map-get($font-size-map, #{$size});
+
+        .v-checkbox__material {
+          width: map-get($checkbox-width-map, #{$size});
+          height: map-get($checkbox-width-map, #{$size});
+
+          & > svg {
+            width: map-get($checkbox-width-map, #{$size});
+            height: map-get($checkbox-width-map, #{$size});
+          }
+        }
+
+        &.v-checkbox--bordered {
+          height: map-get($checkbox-label-height-map, #{$size});
+          padding: 0 15px 0 10px;
+        }
+      }
+    }
+
+    &.v-checkbox--bordered {
+      border: 1px solid $v-disabled-line;
+      border-radius: $v-border-radius;
+    }
+
+    & > span {
+      display: inline-block;
+      box-sizing: content-box;
+      vertical-align: top;
+
+      &.v-checkbox__material {
+        flex-shrink: 0; // keep the checkbox icon width
+      }
+
+      &.v-checkbox__label-text {
+        flex-shrink: 1; // just use flex box to shrink text width. let text ellipsis
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  // 禁用状态透明色
+  &.disabled {
+    label {
+      cursor: not-allowed;
+      color: $v-disabled-text;
+    }
+
+    .v-checkbox__material {
+      border-color: $v-icon-fill-active-disabled;
+      background-color: $v-icon-fill-active-disabled;
+    }
+
+    &.unchecked {
+      .v-checkbox__material {
+        border-color: $v-disabled-line;
+        background-color: $v-disabled-bg;
+      }
+    }
+
+    &.half-checked {
+      .v-checkbox__material {
+        background-color: $v-disabled-bg;
+
+        .v-checkbox__halfchecked-bg {
+          transform: scale(0.4288);
+          background-color: $v-disabled-text;
+          opacity: 1;
+        }
+      }
+    }
+
+    &.active {
+      svg polygon {
+        fill: $v-light-text;
+      }
+    }
+  }
+}
+
+.v-checkbox--no-animation {
+  transition: none !important;
+}
+
+.v-checkbox__column-margin {
+  height: 28px;
+  line-height: 28px;
+}
+
+.v-checkbox__wrap .v-checkbox label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

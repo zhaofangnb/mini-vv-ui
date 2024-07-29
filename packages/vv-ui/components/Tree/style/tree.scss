@@ -1,0 +1,28 @@
+.v-tree {
+  .v-tree-node {
+    @apply hover:bg-slate-300 relative leading-8 flex items-center;
+    text-align: left;
+
+    .v-tree-node-line {
+      @apply absolute w-px bg-slate-300;
+    }
+
+    .v-tree-check {
+      @apply relative;
+      .v-tree-check__inner {
+        @apply absolute;
+        position: absolute;
+        left: 4px;
+        top: 8px;
+        width: 12px;
+        height: 12px;
+        background: #5468ff;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 2px;
+      }
+    }
+  }
+}

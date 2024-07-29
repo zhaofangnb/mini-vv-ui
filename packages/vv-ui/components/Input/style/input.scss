@@ -1,0 +1,26 @@
+@import './input-config.scss';
+
+$input-prefix-cls: 'v-input';
+
+.#{$input-prefix-cls}-wrapper {
+  @include input-wrapper-style($input-prefix-cls);
+
+  .#{$input-prefix-cls} {
+    @include input-style;
+    // 禁用状态
+    &[disabled] {
+      @apply cursor-not-allowed;
+    }
+    &.#{$input-prefix-cls}-size-small {
+      @include input-size(small);
+    }
+
+    &.#{$input-prefix-cls}-size-medium {
+      @include input-size(medium);
+    }
+
+    &.#{$input-prefix-cls}-size-large {
+      @include input-size(large);
+    }
+  }
+}

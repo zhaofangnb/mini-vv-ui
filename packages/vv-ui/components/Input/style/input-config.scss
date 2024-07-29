@@ -1,0 +1,128 @@
+@use 'sass:map';
+@import '../../../style/variable.scss';
+
+// 布局
+$input-padding-horizontal: $spacing-6;
+$input-margin-left-clear-btn: $spacing-6;
+$input-spacing-clear-icon-right: $spacing-4;
+$input-padding-word-limit-left: $spacing-4;
+
+$input-border-width: 1px;
+$input-color-border: transparent;
+$input-border-radius: $radius-small;
+
+$input-color-bg_focus: #fff;
+$input-color-border_focus: $v-color-primary;
+$input-size-shadow_focus: 0;
+$input-color-shadow_focus: $v-brand-active-focus;
+
+@mixin input-wrapper-style($cls) {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  padding-left: $input-padding-horizontal;
+  padding-right: $input-padding-horizontal;
+  font-size: 14px;
+  color: rgb(29, 33, 41);
+  background-color: rgb(242, 243, 245);
+  border: $input-border-width solid $input-color-border;
+  border-radius: $input-border-radius;
+  cursor: text;
+  transition: color 0.1s $transition-timing-function-linear, border-color 0.1s $transition-timing-function-linear,
+    background-color 0.1s $transition-timing-function-linear;
+
+  &:focus-within,
+  &.#{$cls}-wrapper--focus {
+    background-color: $input-color-bg_focus;
+    border-color: $input-color-border_focus;
+    box-shadow: 0 0 0 $input-size-shadow_focus $input-color-shadow_focus;
+  }
+
+  // prefix suffix icon
+  .#{$cls}-prefix,
+  .#{$cls}-suffix {
+    cursor: auto;
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+    user-select: none;
+    > svg {
+      font-size: 14px;
+    }
+  }
+
+  .#{$cls}-prefix {
+    padding-right: 12px;
+    color: rgb(78, 89, 105);
+  }
+  .#{$cls}-suffix {
+    padding-left: 12px;
+    color: rgb(78, 89, 105);
+  }
+
+  .#{$cls}-clear-btn {
+    position: absolute;
+    right: 3px;
+    visibility: hidden;
+    cursor: pointer;
+    font-size: 12px;
+    align-self: center;
+    color: rgb(78, 89, 105);
+  }
+  &:hover .#{$cls}-clear-btn {
+    visibility: visible;
+  }
+}
+
+@mixin input-style {
+  position: relative;
+  width: 96%;
+  padding-right: 0;
+  padding-left: 0;
+  color: inherit;
+  line-height: $line-height-base;
+  background: none;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  cursor: inherit;
+  -webkit-appearance: none;
+  /* Prevent any object from being highlighted upon touch event*/
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+  &::placeholder {
+    color: rgb(134, 144, 156);
+  }
+}
+
+$_size: (
+  small: (
+    height: $v-size-sm,
+    font-size: 14px
+  ),
+  medium: (
+    height: $v-size-md,
+    font-size: 14px
+  ),
+  large: (
+    height: $v-size-lg,
+    font-size: 14px
+  )
+);
+
+@mixin input-size($size) {
+  padding-top: round(
+    calc(
+      (map.get($_size, $size, height) - $input-border-width * 2 - $line-height-base * map.get($_size, $size, font-size)) /
+        2
+    )
+  );
+  padding-bottom: round(
+    calc(
+      (map.get($_size, $size, height) - $input-border-width * 2 - $line-height-base * map.get($_size, $size, font-size)) /
+        2
+    )
+  );
+}

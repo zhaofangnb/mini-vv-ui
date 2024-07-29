@@ -1,0 +1,184 @@
+@import '../../../style/variable.scss';
+
+// 按钮类型的配置
+$type: (
+  primary: (
+    color: $v-light-text,
+    background-color: $v-color-primary
+  ),
+  success: (
+    color: $v-light-text,
+    background-color: $v-color-success
+  ),
+  info: (
+    color: $v-light-text,
+    background-color: $v-color-info
+  ),
+  warning: (
+    color: $v-light-text,
+    background-color: $v-color-warning
+  ),
+  danger: (
+    color: $v-light-text,
+    background-color: $v-color-danger
+  ),
+  text: (
+    padding: 0,
+    color: $v-brand-active
+  )
+);
+
+// 按钮伪类的配置
+$pseudo: (
+  primary: (
+    hover: (
+      background-color: $v-color-primary-hover,
+      color: $v-light-text
+    ),
+    focus: (
+      background-color: $v-color-primary-hover,
+      color: $v-light-text
+    ),
+    active: (
+      background-color: $v-color-primary-active,
+      color: $v-light-text
+    ),
+    disabled: (
+      color: $v-light-text,
+      background-color: $v-primary-disabled,
+      border: none
+    )
+  ),
+  success: (
+    hover: (
+      background-color: $v-color-success-hover,
+      color: $v-light-text
+    ),
+    focus: (
+      background-color: $v-color-success-hover,
+      color: $v-light-text
+    ),
+    active: (
+      background-color: $v-color-success-active,
+      color: $v-light-text
+    ),
+    disabled: (
+      color: $v-light-text,
+      background-color: $v-success-disabled,
+      border: none
+    )
+  ),
+  info: (
+    hover: (
+      background-color: $v-color-info-hover,
+      color: $v-light-text
+    ),
+    focus: (
+      background-color: $v-color-info-hover,
+      color: $v-light-text
+    ),
+    active: (
+      background-color: $v-color-info-active,
+      color: $v-light-text
+    ),
+    disabled: (
+      color: $v-light-text,
+      background-color: $v-info-disabled,
+      border: none
+    )
+  ),
+  warning: (
+    hover: (
+      background-color: $v-color-warning-hover,
+      color: $v-light-text
+    ),
+    focus: (
+      background-color: $v-color-warning-hover,
+      color: $v-light-text
+    ),
+    active: (
+      background-color: $v-color-warning-active,
+      color: $v-light-text
+    ),
+    disabled: (
+      color: $v-light-text,
+      background-color: $v-warning-disabled,
+      border: none
+    )
+  ),
+  danger: (
+    hover: (
+      background-color: $v-color-danger-hover,
+      color: $v-light-text
+    ),
+    focus: (
+      background-color: $v-color-danger-hover,
+      color: $v-light-text
+    ),
+    active: (
+      background-color: $v-color-danger-active,
+      color: $v-light-text
+    ),
+    disabled: (
+      color: $v-light-text,
+      background-color: $v-danger-disabled,
+      border: none
+    )
+  ),
+  text: (
+    hover: (
+      color: $v-brand-active-focus
+    ),
+    focus: (
+      color: $v-brand-active-focus
+    ),
+    active: (
+      color: $v-brand-active-focus
+    )
+  )
+);
+
+// 按钮大小的配置
+$size: (
+  small: (
+    padding: 0 16px,
+    font-size: $v-font-size-sm
+  ),
+  medium: (
+    padding: 0 20px,
+    font-size: $v-font-size-md
+  ),
+  large: (
+    padding: 0 20px,
+    font-size: $v-font-size-lg
+  )
+);
+
+// 朴素按钮的配置
+$plain: (
+  palin-primary: (
+    color: $v-color-primary-active,
+    border-color: $v-color-primary-active,
+    background: $v-color-primary-plain
+  ),
+  palin-success: (
+    color: $v-color-success-active,
+    border-color: $v-color-success-active,
+    background-color: $v-color-success-plain
+  ),
+  palin-info: (
+    color: $v-color-info-active,
+    border-color: $v-color-info-active,
+    background-color: $v-color-info-plain
+  ),
+  palin-warning: (
+    color: $v-color-warning-active,
+    border-color: $v-color-warning-active,
+    background-color: $v-color-warning-plain
+  ),
+  palin-danger: (
+    color: $v-color-danger-active,
+    border-color: $v-color-danger-active,
+    background-color: $v-color-danger-plain
+  )
+);

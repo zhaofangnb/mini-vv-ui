@@ -1,0 +1,58 @@
+@font-face {
+  font-family: 'iconfont'; /* Project id 3924026 */
+  src: url('//at.alicdn.com/t/c/font_3924026_1nu18p3f2qsj.woff2?t=1679990481048') format('woff2'),
+    url('//at.alicdn.com/t/c/font_3924026_1nu18p3f2qsj.woff?t=1679990481048') format('woff'),
+    url('//at.alicdn.com/t/c/font_3924026_1nu18p3f2qsj.ttf?t=1679990481048') format('truetype');
+}
+[class^='v-icon-'],
+[class*=' v-icon-'] {
+  font-family: 'iconfont' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: baseline;
+  display: inline-flex;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.v-icon-loading:before {
+  content: '\e6b4';
+}
+
+.v-icon-edit:before {
+  content: '\e649';
+}
+
+.v-icon-collect:before {
+  content: '\e600';
+}
+
+.v-icon-collected:before {
+  content: '\e8c6';
+}
+
+.v-icon-search:before {
+  content: '\e8d6';
+}
+
+.v-icon-delete:before {
+  content: '\e74b';
+}
+
+.v-icon-upload:before {
+  content: '\ec1d';
+}
+
+.v-icon-share:before {
+  content: '\e86e';
+}
+
+.v-icon-envolop:before {
+  content: '\e857';
+}
+.v-icon-close:before {
+  content: '\e725';
+}

@@ -1,0 +1,47 @@
+@import '../../../style/variable.scss';
+
+.v-tabs {
+  display: flex;
+  flex-direction: column;
+
+  ul.v-tabs__nav {
+    list-style: none;
+    display: inline-flex;
+    margin: 0;
+    padding: 0;
+    border-bottom: 2px solid #e4e7ed;
+    cursor: pointer;
+    li {
+      margin-left: 32px;
+      margin-bottom: -2px;
+      color: #303133;
+      padding-bottom: 4px;
+
+      svg {
+        display: inline-block;
+      }
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &.active {
+        font-weight: 700;
+        border-bottom: 2px solid $v-color-primary;
+        color: $v-color-primary;
+
+        svg {
+          fill: $v-color-primary;
+        }
+      }
+
+      &:hover {
+        color: $v-color-primary-hover;
+
+        svg {
+          fill: $v-color-primary;
+        }
+      }
+    }
+  }
+}

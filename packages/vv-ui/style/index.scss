@@ -1,0 +1,11 @@
+// 使用postcss-import 导入文件
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import './variable.scss';
+
+// 按钮
+@import './components/Button/style/button.scss';
+// 图标
+@import './components/Icon/style/icon.scss';

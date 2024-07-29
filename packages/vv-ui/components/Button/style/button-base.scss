@@ -1,0 +1,73 @@
+@import '../../../style/variable.scss';
+//  按钮基础样式
+//  @mixin 指令允许我们定义一个可以在整个样式表中重复使用的样式。
+//  @include 指令可以将混入（mixin）引入到文档中。
+//  @apply 将变量引入css, 可以在许多不同的地方使用它,而无需再次重写
+@mixin button-base {
+  // 布局样式
+  @apply flex-row items-center justify-center;
+  // 元素属性
+  @apply border-[1px] border-solid border-transparent
+         h-[28px] py-0 px-[10px] bg-transparent;
+  // 边框样式
+  @apply rounded;
+  // 文本属性
+  @apply outline-0 leading-normal 
+        whitespace-nowrap cursor-pointer;
+  // 文字样式
+  font-size: $v-font-size-md;
+  // 其他
+  transition: background-color $v-animation-duration-slow $v-animation-ease-in-out-smooth,
+    border-clor $v-animation-duration-slow $v-animation-ease-in-out-smooth,
+    color $v-animation-duration-slow $v-animation-ease-in-out-smooth;
+  // 禁用状态
+  &[disabled] {
+    @apply cursor-not-allowed opacity-50;
+  }
+  // 宽度100%的diaplay: block
+  &.v-btn-block {
+    @apply block w-full;
+  }
+
+  &.v-btn-round {
+    @apply rounded-full;
+  }
+
+  &.v-btn-circle-sm {
+    @apply rounded-full h-8 w-8  flex items-center justify-center;
+  }
+
+  &.v-btn-circle-md {
+    @apply rounded-full h-10 w-10 flex items-center justify-center;
+  }
+
+  &.v-btn-circle-lg {
+    @apply rounded-full h-12 w-12 flex items-center justify-center;
+  }
+}
+
+// 新增一个“多态”的mixin,后续size 等其他样式可以复用
+// @each：其中包含的每个项目的列表中的值
+
+@mixin button-variant($variant, $pseudo: false) {
+  // 第一层是多态的类型
+  @each $key, $value in $variant {
+    &.v-btn-#{$key} {
+      // 第二层是多态类型下的样式
+      @each $item-key, $item-value in $value {
+        // 如果是伪类就继续第三层
+        @if $pseudo {
+          &:#{$item-key} {
+            // 第三层是伪类的样式
+            @each $sub-item-key, $sub-item-value in $item-value {
+              #{$sub-item-key}: $sub-item-value;
+            }
+          }
+        } @else {
+          // 不是伪类直接设置样式
+          #{$item-key}: $item-value;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,149 @@
+// 定义主题变量
+
+// 组件的size
+$v-size-sm: 24px;
+$v-size-md: 32px;
+$v-size-lg: 40px;
+//一般的圆角
+$v-border-radius: var(--v-border-radius, 2px);
+$v-border-checkbox-button-radius: var(--v-border-checkbox-button-radius, 5px);
+
+// 组件side为samll时使用此字号大小
+$v-font-size-sm: var(--v-font-size-sm, 10px);
+// 组件side为middle时使用此字号大小
+$v-font-size-md: var(--v-font-size-md, 14px);
+// 组件side为large时使用此字号大小
+$v-font-size-lg: var(--v-font-size-lg, 16px);
+
+// 设置动画的持续时间
+$v-animation-duration-slow: var(--v-animation-duration-slow, 300ms);
+// 动画以低速开始和结束。
+$v-animation-ease-in-out-smooth: var(--v-animation-ease-in-out-smooth, cubic-bezier(0.42, 0, 0.58, 1));
+
+// 线性
+$transition-timing-function-linear: cubic-bezier(0, 0, 1, 1);
+// 标准
+$transition-timing-function-standard: cubic-bezier(0.34, 0.69, 0.1, 1);
+// 过冲
+$transition-timing-function-overshoot: cubic-bezier(0.3, 1.3, 0.3, 1);
+// 减速
+$transition-timing-function-decelerate: cubic-bezier(0.4, 0.8, 0.74, 1);
+// 加速
+$transition-timing-function-accelerate: cubic-bezier(0.26, 0, 0.6, 0.2);
+
+// 有色深背景下字体颜色
+$v-light-text: var(--v-light-text, #fff);
+
+// 品牌色,主要按钮
+$v-color-primary: var(--v-color-primary, #5e7ce0);
+// 成功按钮
+$v-color-success: var(--v-color-success, #30df4d);
+// 信息按钮
+$v-color-info: var(--v-color-info, #68686d);
+// 警告按钮
+$v-color-warning: var(--v-color-warning, #ce954a);
+// 危险按钮
+$v-color-danger: var(--v-color-danger, #f8747b);
+
+// 主要按钮 朴素 最浅
+$v-color-primary-plain: var(--v-volor-primary-plain, #bec5e0);
+// 主要按钮 悬停 较浅
+$v-color-primary-hover: var(--v-volor-primary-hover, #7693f5);
+// 主要按钮激活 较深
+$v-color-primary-active: var(--v-color-primary-active, #344899);
+// 主要按钮禁用
+$v-primary-disabled: var(--v-primary-disabled, #879ada);
+
+// 成功按钮 朴素 最浅
+$v-color-success-plain: var(--v-volor-success-plain, #bedbc5);
+// 成功按钮 悬停 较浅
+$v-color-success-hover: var(--v-volor-success-hover, #53d875);
+// 成功按钮激活 较深
+$v-color-success-active: var(--v-color-success-active, #11a737);
+// 成功按钮禁用
+$v-success-disabled: var(--v-success-disabled, #bae2ab);
+
+// 信息按钮 朴素 最浅
+$v-color-info-plain: var(--v-volor-info-plain, #e6e9e6);
+// 信息按钮 悬停 较浅
+$v-color-info-hover: var(--v-volor-info-hover, #6c706d);
+// 信息按钮激活 较深
+$v-color-info-active: var(--v-color-info-active, #505057);
+// 信息按钮禁用
+$v-info-disabled: var(--v-success-info, #c3c5c2);
+
+// 警告按钮 朴素 最浅
+$v-color-warning-plain: var(--v-volor-warning-plain, #cfc7bf);
+// 警告按钮 悬停 较浅
+$v-color-warning-hover: var(--v-volor-warning-hover, #daa173);
+// 警告按钮激活 较深
+$v-color-warning-active: var(--v-color-warning-active, #e27b27);
+// 警告按钮禁用
+$v-warning-disabled: var(--v-warning-info, #ebcdb4);
+
+// 危险按钮 朴素 最浅
+$v-color-danger-plain: var(--v-volor-danger-plain, rgb(226, 197, 190));
+// 危险按钮 悬停 较浅
+$v-color-danger-hover: var(--v-volor-danger-hover, #f19494);
+// 危险按钮激活 较深
+$v-color-danger-active: var(--v-color-danger-active, #df3f81);
+// 危险按钮禁用
+$v-danger-disabled: var(--v-danger-info, #f7c0c0);
+
+// 正文文本
+$v-text: var(--v-text, #252b3a);
+$v-hover-color: var(--v-hover-color, $v-color-primary);
+$v-disabled-text: var(--v-disabled-text, #8891a7);
+$v-disabled-bg: var(--v-disabled-bg, #c2cce5);
+$v-disabled-line: var(--v-disabled-line, #a9b0c0);
+
+// 大面积的不可折叠区块的背景色,如导航背景色
+$v-bg-block: var(--v-bg-block, #fff);
+// 边框分割线, 仅用于边框
+$v-devide-line: var(--v-devide-line, #adb0b8);
+// 表单控件边框激活色，用于获取焦点
+$v-form-control-line-active: var(--v-form-control-line-active, #5e7ce0);
+// 品牌色激活色，加深
+$v-brand-active: var(--v-brand-active, #526ecc);
+// 品牌色焦点色（重度加深）
+$v-brand-active-focus: var(--v-brand-active-focus, #344899);
+
+$v-icon-fill-active-disabled: var(--v-icon-fill-active-disabled, #beccfa); // svg图标激活状态禁用色
+
+/******** spacing *******/
+
+$spacing-none: 0;
+$spacing-1: 2px;
+$spacing-2: 4px;
+$spacing-3: 6px;
+$spacing-4: 8px;
+$spacing-5: 10px;
+$spacing-6: 12px;
+$spacing-7: 16px;
+$spacing-8: 20px;
+$spacing-9: 24px;
+$spacing-10: 32px;
+$spacing-11: 36px;
+$spacing-12: 40px;
+$spacing-13: 48px;
+$spacing-14: 56px;
+$spacing-15: 60px;
+$spacing-16: 64px;
+$spacing-17: 72px;
+$spacing-18: 80px;
+$spacing-19: 84px;
+$spacing-20: 96px;
+$spacing-21: 100px;
+$spacing-22: 120px;
+
+/******** radius *******/
+
+$radius-none: 0px;
+$radius-small: 2px;
+$radius-medium: 4px;
+$radius-large: 8px;
+$radius-circle: 50%;
+
+$line-height-base: 1.5715;
+
+$v-area: var(--v-area, #f8f8f8);

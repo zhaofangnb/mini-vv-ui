@@ -1,0 +1,48 @@
+/* .vitepress/theme/custom.scss
+  overriding root level CSS variables:
+*/
+
+:root {
+  // 主色调
+  --vp-c-brand: #646cff;
+  --vp-c-brand-light: #747bff;
+  // 分割线
+  --vp-c-divider-light: rgba(60, 60, 67, 0.12);
+
+  // 底部栏色调
+  --color-border: var(--v-c-brand-light);
+  // 代码背景色
+  --color-code-bg: rgba(77, 208, 225, 0.08);
+  // 引用背景色
+  --color-block-bg: rgba(77, 208, 225, 0.15);
+}
+
+// 顶部navbar
+// .VPNavBar {
+//   border-bottom: solid 1px var(--vp-c-divider-light) !important;
+// }
+.VPHome {
+  .VPHero {
+    .container {
+      .main {
+        .VPButton.brand {
+          background-color: var(--vp-c-brand-light) !important;
+        }
+      }
+      .image {
+      }
+    }
+  }
+}
+
+// features区域
+.VPFeatures {
+  .VPLink {
+    .title {
+      color: var(--vp-c-brand);
+    }
+  }
+}
+.vp-doc a:hover {
+  color: var(--vp-c-brand);
+}

@@ -14,7 +14,7 @@ hero:
       link: /guide/
     - theme: alt
       text: View on GitHub
-      link: https://gitee.com/lucky-zhaofang/vue-docs-cli-ui
+      link: https://github.com/zhaofangnb/mini-vv-ui
 features:
   - icon: ⚡️
     title: 便捷

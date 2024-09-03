@@ -11,6 +11,6 @@ export default [
   },
   {
     text: '友情链接',
-    items: [{ text: 'gitee', link: 'https://gitee.com/lucky-zhaofang' }]
+    items: [{ text: 'github', link: 'https://github.com/zhaofangnb/mini-vv-ui' }]
   }
 ]
